@@ -17,6 +17,8 @@
           v-model="search"
           @keyup.up="highlightPrev"
           @keyup.down="highlightNext"
+          @keyup.enter.prevent="selectHighlighted"
+          @keyup.tab.prevent
           ref="searchInput"
         />
         <ul
@@ -82,6 +84,9 @@ export default {
       this.value = option
       this.search = ''
       this.close()
+    },
+    selectHighlighted() {
+      this.select(this.filteredOptions[this.highlightedIndex])
     },
     highlight(index) {
       this.highlightedIndex = index
