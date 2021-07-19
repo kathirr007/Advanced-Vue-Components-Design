@@ -53,6 +53,7 @@ import Popper from 'popper.js'
 // new Popper(reference, element, options)
 
 export default {
+  name: 'SearchSelect',
   props: ['value', 'options', 'filterFunction'],
   components: {
     OnClickOutside
@@ -81,11 +82,13 @@ export default {
       })
     },
     close() {
+      // debugger
+      if (!this.isOpen) return
       this.isOpen = false
       this.$refs.button.focus()
     },
     select(option) {
-      this.value = option
+      this.$emit('input', option)
       this.search = ''
       this.close()
     },

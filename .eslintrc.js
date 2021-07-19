@@ -16,6 +16,7 @@ module.exports = {
     'generator-star-spacing': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'vue/valid-v-model': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/no-unused-components':
       process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/no-unused-vars': 'off',

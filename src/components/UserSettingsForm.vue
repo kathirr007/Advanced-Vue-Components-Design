@@ -2,6 +2,32 @@
   <div class="card">
     <h1 class="text-2xl font-bold mb-6">Your Settings</h1>
     <label class="block mb-6">
+      <span class="block text-grey-darker font-semibold mb-2">Name</span>
+      <input v-model="name" class="form-input" :placeholder="'your name...'" />
+    </label>
+    <label class="block mb-6">
+      <span class="block text-grey-darker font-semibold mb-2"
+        >Auto Formated Name</span
+      >
+      <input
+        :value="name | capitalize | formattedName"
+        @blur="name = $event.target.value"
+        class="form-input"
+        :placeholder="'your name...'"
+      />
+    </label>
+    <label class="block mb-6">
+      <span class="block text-grey-darker font-semibold mb-2"
+        >Auto Formated to Currency</span
+      >
+      <input
+        :value="amount | formatCurrency"
+        @blur="amount = $event.target.value"
+        class="form-input"
+        :placeholder="'Enter amount...'"
+      />
+    </label>
+    <label class="block mb-6">
       <span class="block text-grey-darker font-semibold mb-2"
         >Email Address</span
       >
@@ -38,10 +64,42 @@ export default {
     ToggleInput
   },
   props: ['accountId'],
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    },
+    formatCurrency(val) {
+      if (val === '') {
+        return ''
+      }
+      let number = +val.replace(/[^\d.]/g, '')
+
+      const standardFormat = new Intl.NumberFormat('en-AU', {
+        style: 'currency',
+        currency: 'AUD',
+        minimumFractionDigis: 2
+      })
+
+      return isNaN(number) ? '$0.00' : standardFormat.format(number)
+    },
+    formattedName(val) {
+      return val !== '' ? `Hi ${val}` : ''
+    }
+  },
   data() {
     return {
+      name: '',
       email: 'jane@example.com',
+      amount: '',
       receiveNewsletter: false
+    }
+  },
+  computed: {
+    formattedInput() {
+      return this.name == '' ? '' : `Hi ${this.name}`
     }
   },
   methods: {
