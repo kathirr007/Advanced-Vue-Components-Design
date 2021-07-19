@@ -15,10 +15,11 @@
         <input
           class="search-select-search"
           v-model="search"
+          @keyup.esc="close"
           @keyup.up="highlightPrev"
           @keyup.down="highlightNext"
           @keyup.enter.prevent="selectHighlighted"
-          @keyup.tab.prevent
+          @keydown.tab.prevent
           ref="searchInput"
         />
         <ul
@@ -70,6 +71,9 @@ export default {
   },
   methods: {
     open() {
+      if (this.isOpen) {
+        return
+      }
       this.isOpen = true
       this.$nextTick(() => {
         this.setPopper()
