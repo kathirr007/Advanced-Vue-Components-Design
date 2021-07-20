@@ -24,7 +24,7 @@
         :value="amount | formatCurrency"
         @blur="amount = $event.target.value"
         class="form-input"
-        :placeholder="'Enter amount...'"
+        :placeholder="'$0.00'"
       />
     </label>
     <label class="block mb-6">
