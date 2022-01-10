@@ -16,7 +16,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "@shopify/draggable": "^1.0.0-beta.8",
     "core-js": "^3.6.5",
-    "element-resize-detector": "^1.2.3",
+    "element-resize-detector": "^1.2.4",
     "pikaday": "^1.8.2",
     "popper.js": "^1.16.1",
     "portal-vue": "^2.1.7",

@@ -248,10 +248,10 @@
       <h2 class="text-gray-700 mb-4">Original Tag Input</h2>
       <tag-input v-model="tags"></tag-input>
     </div>
-    <div class="mx-auto mb-8" style="width: 420px">
+    <div class="mx-auto mb-8">
       <profile-card></profile-card>
     </div>
-    <div class="mx-auto mb-8" style="width: 320px">
+    <div class="mx-auto mb-8">
       <profile-card></profile-card>
     </div>
     <div class="mx-auto mb-8">

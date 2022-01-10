@@ -738,6 +738,7 @@ html {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-content: center;
 }
 .profile-card--horizontal .profile-card-image {
   margin-left: 0;

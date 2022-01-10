@@ -1,5 +1,8 @@
-# adv-vue-cmpnts
+# Advanced Vue components
 
+> Set of re-useable vue components
+
+To check live version please checkout **[here](https://advanced-vue-components.vercel.app/)**
 ## Project setup
 ```
 yarn install
