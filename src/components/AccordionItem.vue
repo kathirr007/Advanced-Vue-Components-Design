@@ -19,9 +19,11 @@
         />
       </svg>
     </div>
-    <div class="accordion-item-body" v-show="active">
-      <slot name="content"></slot>
-    </div>
+    <transition name="slide-down">
+      <div class="accordion-item-body" v-show="active">
+        <slot name="content"></slot>
+      </div>
+    </transition>
   </div>
 </template>
 

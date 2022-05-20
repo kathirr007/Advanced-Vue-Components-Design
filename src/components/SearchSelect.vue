@@ -6,6 +6,7 @@
         @keyup.enter.prevent="open"
         ref="button"
         type="button"
+        v-bind="$attrs['id']"
         class="search-select-input"
       >
         <span v-if="value !== null">{{ value }}</span>

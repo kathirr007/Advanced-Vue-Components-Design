@@ -6,10 +6,13 @@
     </h2>
     <div class="max-w-sm mx-auto card mb-8">
       <div class="mb-4">
-        <label class="form-label mb-2">Favorite Thrash Band</label>
+        <label class="form-label mb-2" for="SearchSelect"
+          >Favorite Thrash Band</label
+        >
         <search-select
           v-model="selectedOption"
           :options="selectOptions"
+          id="SearchSelect"
           :filter-function="filterFunction"
         ></search-select>
       </div>
@@ -265,7 +268,20 @@
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
             pariatur ducimus veritatis quis explicabo, reiciendis beatae magni
             consequatur alias qui sit nulla porro distinctio blanditiis
-            voluptate in corrupti ex non.
+            voluptate in corrupti ex non. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Sapiente, aliquid tempore voluptates architecto
+            ea, unde voluptas voluptate dignissimos distinctio neque, quas
+            minima dolor laborum recusandae est aliquam. Libero, dolorem?
+            Temporibus quisquam tenetur, ex optio itaque iste quibusdam
+            consequuntur quidem soluta doloremque velit harum quos accusantium
+            voluptatibus! Animi asperiores dignissimos dolorem.
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A vero
+              maxime praesentium provident quam quaerat fugiat dignissimos
+              pariatur officiis! Illum cumque nesciunt commodi animi ducimus
+              earum pariatur rerum consequuntur omnis. Obcaecati temporibus vel
+              veniam ducimus! Possimus distinctio temporibus rerum minus.
+            </p>
           </template>
         </accordion-item>
         <accordion-item :item-id="2">
@@ -275,6 +291,15 @@
             pariatur ducimus veritatis quis explicabo, reiciendis beatae magni
             consequatur alias qui sit nulla porro distinctio blanditiis
             voluptate in corrupti ex non.
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
+              nemo alias ullam, minima tempora facilis obcaecati libero
+              reprehenderit, itaque similique voluptatibus expedita iste
+              assumenda. Modi labore magnam provident facilis culpa, animi autem
+              natus quaerat similique deserunt unde distinctio quo, optio et
+              accusantium sit nesciunt quos asperiores adipisci, illum amet
+              velit.
+            </p>
           </template>
         </accordion-item>
         <accordion-item :item-id="3">
@@ -284,6 +309,20 @@
             pariatur ducimus veritatis quis explicabo, reiciendis beatae magni
             consequatur alias qui sit nulla porro distinctio blanditiis
             voluptate in corrupti ex non.
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+              tempore accusamus qui modi rerum repellat, exercitationem sit
+              perspiciatis, perferendis at delectus quasi eligendi! Fugit at
+              consectetur deserunt, voluptate fuga illo laboriosam quo. Sunt
+              nihil id suscipit ipsa natus hic unde consequatur sit doloremque
+              sed, ea dolore quidem maxime numquam quas beatae eligendi quia
+              dolor nam deleniti labore tempore. Praesentium ullam nobis,
+              tempora nam ipsum numquam, qui alias provident ratione voluptatum
+              beatae optio id sit perferendis error. Consequatur autem excepturi
+              ullam, ipsum, magnam error maxime laborum commodi necessitatibus,
+              beatae inventore eaque deleniti itaque dicta sapiente optio
+              ratione amet culpa quidem minus?
+            </p>
           </template>
         </accordion-item>
       </accordion-list>
@@ -433,5 +472,22 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: max-height 0.25s ease-in-out;
+}
 
+.slide-down-enter-to,
+.slide-down-leave {
+  overflow: hidden;
+  max-height: 40vh;
+}
+
+.slide-down-enter,
+.slide-down-leave-to {
+  overflow: hidden;
+  max-height: 0;
+}
+</style>
 <style src="@/assets/css/app.css" />
